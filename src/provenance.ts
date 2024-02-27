@@ -32,33 +32,33 @@ export const generateProvenance = (
         buildType: GITHUB_BUILD_TYPE,
         externalParameters: {
           workflow: {
-            ref: workflowRef,
-            repository: `${env.GITHUB_SERVER_URL}/${env.GITHUB_REPOSITORY}`,
-            path: workflowPath
+            ref: "a ref",
+            repository: "a repo",
+            path: "a path"
           }
         },
         internalParameters: {
           github: {
-            event_name: env.GITHUB_EVENT_NAME,
-            repository_id: env.GITHUB_REPOSITORY_ID,
-            repository_owner_id: env.GITHUB_REPOSITORY_OWNER_ID
+            event_name: "foo",
+            repository_id: "bar",
+            repository_owner_id: "owner id"
           }
         },
         resolvedDependencies: [
           {
-            uri: `git+${env.GITHUB_SERVER_URL}/${env.GITHUB_REPOSITORY}@${env.GITHUB_REF}`,
+            uri: "https://www.openbsd.org/",
             digest: {
-              gitCommit: env.GITHUB_SHA
+              gitCommit: "123"
             }
           }
         ]
       },
       runDetails: {
         builder: {
-          id: `${GITHUB_BUILDER_ID_PREFIX}/${env.RUNNER_ENVIRONMENT}`
+          id: "abc123"
         },
         metadata: {
-          invocationId: `${env.GITHUB_SERVER_URL}/${env.GITHUB_REPOSITORY}/actions/runs/${env.GITHUB_RUN_ID}/attempts/${env.GITHUB_RUN_ATTEMPT}`
+          invocationId: "an id"
         }
       }
     }
