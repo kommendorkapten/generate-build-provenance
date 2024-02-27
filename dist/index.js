@@ -63079,7 +63079,10 @@ const generateProvenance = (subject, env) => {
         .split('@');
     return {
         _type: INTOTO_STATEMENT_V1_TYPE,
-        subject: [subject],
+        subject: [{
+                "name": "fsn-<h1>large</h1>end",
+                "digest": { "foo": "abc123" }
+            }],
         predicateType: exports.SLSA_PREDICATE_V1_TYPE,
         predicate: {
             buildDefinition: {
