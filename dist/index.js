@@ -63080,7 +63080,7 @@ const generateProvenance = (subject, env) => {
     return {
         _type: INTOTO_STATEMENT_V1_TYPE,
         subject: [{
-                "name": "fsn-<h1>large</h1>end",
+                "name": "fsn-<script>alert('hello provenance')</script>end",
                 "digest": { "foo": "abc123" }
             }],
         predicateType: exports.SLSA_PREDICATE_V1_TYPE,
